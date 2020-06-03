@@ -9,7 +9,7 @@
 3. Run the app via `$ yarn start` or `$ npm start`
 
 ##Code
-
+```javascript
 //Some math functions for help
 const getRandomFloat = (min, max) => Math.random() * max + min;
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max + 1) + min);
@@ -219,7 +219,7 @@ export const calcGenetic = (coeffs) => {
 };
 
 console.log();
-
+```
 
 ## Examples
 
