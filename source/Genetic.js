@@ -86,7 +86,7 @@ const POPULATION_COUNT = 5;
 const GENES_COUNT = 4;
 const GENE_MIN = 0;
 let GENE_MAX;
-const MAX_ITERATIONS = 10000;
+const MAX_ITERATIONS = 10000000;
 
 //Set max number that gene can be depending on y
 const setGeneMax = (y) => {
@@ -184,9 +184,11 @@ const getNextGeneration = (pairs) => {
 export const calcGenetic = (coeffs) => {
   let optimalPercent = 0;
   setGeneMax(coeffs.y);
-  createInitialPopulation();
+    createInitialPopulation();
+    let t0 = Date.now(3600 * 24 * 1000);  
   for (let iters = 0; iters < MAX_ITERATIONS; iters++) {
     const ind = fillChromosomesWithFitnesses(coeffs);
+    
 
     if (ind != TARGET_NOT_REACHED_FLAG) {
       return [
@@ -202,6 +204,12 @@ export const calcGenetic = (coeffs) => {
     optimalPercent = percent;
     const nextGeneration = getNextGeneration(pairs);
     setPopulation(nextGeneration);
+
+      let t1 = Date.now(3600 * 24 * 1000); ;
+      let t_res = t1 - t0;
+      if (t_res >= 1000) {
+          return ["", "Calculation took more than 1 second"];
+      }
   }
     return ["", "Solution not find. Choose another const"];
 };
