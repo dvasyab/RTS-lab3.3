@@ -3,7 +3,7 @@
 #### Main program is in Source dir, in a file named "Genetic.js"
 
 ## How to use
- (To use this program you need Expo and yarn downloaded and installed)
+(To use this program you need Expo and yarn downloaded and installed)
 1. Download project and open a cmd in the directory of it
 2. Install JC dependencies via $yarn
 3. Run the app via $ yarn start
